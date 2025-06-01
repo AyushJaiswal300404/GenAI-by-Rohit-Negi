@@ -1,7 +1,9 @@
+import { config } from "dotenv";
+config();
 import { GoogleGenAI } from "@google/genai";
 import readlineSync from 'readline-sync';
 
-const ai = new GoogleGenAI({ apiKey: "AIzaSyD6YNY_4IHa0YNtPBHV-aj7YrmqyqV94f8" });
+const ai = new GoogleGenAI({ apiKey: process.env.MY_API_KEY });
 
  const chat = ai.chats.create({
     model: "gemini-2.0-flash",
